@@ -1,7 +1,7 @@
 var login={
 model:{
   // host:'http://localhost/donat/api/master/index.php',
-host:'http://localhost/piawai/api/login.php',
+host:'http://localhost/api/piawai/login.php',
 data:{email:'sa',pin:'123'},
 
 signform:{
@@ -10,7 +10,7 @@ input:{data:{email:'',pin:''},
 tipe:[ {id:"pin",nama:"password",arr:'1,2'},],},
 
 button:{data:[
-{id:1,nama:"Signin",icon:"person",url:"login.controller.signin()"},
+{id:1,nama:"Sign in",icon:"person",url:"login.controller.signin()"},
 ]},},
 
 regform:{
@@ -19,7 +19,7 @@ input:{
 data:{email:'',pin:''},
 tipe:[ {id:"pin",nama:"password",arr:'1,2'},],},
 button:{data:[
-{id:1,nama:"Signup",icon:"person",url:"login.controller.signup()"},
+  {id:1,nama:"Sign up",icon:"person",url:"login.controller.signup()"},
 ]},},
 
 apps : [
@@ -50,7 +50,7 @@ view:{
   return `
   <div id="login" class="show row login">
   <div class="shadow" >
-  <h1>Login</h1>
+  <h1>Sign in</h1>
   <div class="row"> ${d.view.input(arr.input)} </div>
   <div class="row"> ${d.view.button(arr.button)}
   </div>
@@ -59,11 +59,10 @@ view:{
   },
 
 regform:function(arr){
-
 return `
 <div id="login" class="show row login">
 <div class="shadow" >
-<h1>Register</h1>
+<h1>Sign up</h1>
 <div class="row"> ${d.view.input(arr.input)} </div>
 <div class="row"> ${d.view.button(arr.button)} </div></div></div>`;
 },
@@ -114,8 +113,10 @@ log(loginstatus)
 
   } else {
     out+=`
-        <button id="appBtn" > ${svg.icon('menu')}</button>
-<button onclick="login.controller.signform()" > ${svg.icon('lock')} Signin</button>`;
+    <button id="appBtn" > ${svg.icon('menu')}</button>
+    <button onclick="login.controller.signform()" > ${svg.icon('lock')} Sign in</button>
+    <button onclick="login.controller.regform()" > ${svg.icon('lock')} Sign up</button>
+`;
 
   }
 
@@ -177,12 +178,12 @@ if (profileBtn && profilePanel) {
       panel.innerHTML = `
         <div class="profile-header">
           <div class="profile-info">
-            <strong>s </strong><br>
+            <strong>s</strong><br>
             <small>d</small>
           </div>
         </div>
         <div class="profile-actions gButton">
-          <button onclick="login.controller.signout()">Logout</button>
+          <button onclick="login.controller.signout()">Sign out</button>
           <button onclick="login.controller.editform()">Edit</button>
         </div>
       `;
