@@ -26,7 +26,6 @@ apps : [
   {icon:"piawai",name:"Piawai",url:"/piawai"},
   {icon:"edu",name:"LMS",url:"/lms"},
   {icon:"qrcode",name:"Presensi",url:"/presensi"},
-  {icon:"person",name:"Kuesioner",url:"/kuesioner"},
   {icon:"chart",name:"Inventory",url:"/inventory"},
   {icon:"cart",name:"POS",url:"/pos"},
   {icon:"envelope",name:"Finance",url:"/finance"},
@@ -136,18 +135,21 @@ log(loginstatus)
   var profileBtn = document.getElementById('profileBtn');
   var profilePanel = document.getElementById('profilePanel');
 
+if (appBtn && appPanel) {
   appBtn.onclick = e=>{
     e.stopPropagation();
     appPanel.classList.toggle('active');
     profilePanel.classList.remove('active');
   };
+}
 
+if (profileBtn && profilePanel) {
   profileBtn.onclick = e=>{
     e.stopPropagation();
     profilePanel.classList.toggle('active');
     appPanel.classList.remove('active');
   };
-
+}
   document.onclick = ()=>{
     appPanel.classList.remove('active');
     profilePanel.classList.remove('active');
