@@ -113,7 +113,9 @@ log(loginstatus)
     `;
 
   } else {
-    out+=`<button onclick="login.controller.signform()" > ${svg.icon('lock')} Signin</button>`;
+    out+=`
+        <button id="appBtn" > ${svg.icon('menu')}</button>
+<button onclick="login.controller.signform()" > ${svg.icon('lock')} Signin</button>`;
 
   }
 
