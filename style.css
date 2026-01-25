@@ -1,0 +1,97 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --primary-light: #eff6ff;
+    --text-dark: #1f2937;
+    --text-gray: #4b5563;
+    --bg-light: #f9fafb;
+    --border: #e5e7eb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background: white; color: var(--text-dark); overflow-x: hidden; scroll-behavior: smooth; }
+
+/* --- STICKY HEADER & PROFILE MENU --- */
+header {
+    position: sticky; top: 0; z-index: 9;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.8rem 5%; background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px); border-bottom: 1px solid var(--border);
+}
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+
+.profile-area { position: relative; }
+.profile-btn {
+    width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+    border: 2px solid var(--primary-light); transition: 0.3s;
+}
+.profile-btn:hover { transform: scale(1.1); }
+
+#app-panel {
+    position: absolute; top: 55px; right: 0; width: 280px;
+    background: white; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 20px; display: none; border: 1px solid var(--border); z-index: 1001;
+}
+#app-panel.show { display: block; animation: slideDown 0.3s ease-out; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+.app-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; text-align: center; }
+.app-item { padding: 10px; border-radius: 12px; cursor: pointer; transition: 0.2s; text-decoration: none; color: inherit; }
+.app-item:hover { background: var(--primary-light); }
+.app-item svg { width: 24px; height: 24px; margin-bottom: 5px; }
+.app-item span { font-size: 0.75rem; display: block; }
+
+/* --- 3-LAYER PARALLAX HERO --- */
+.hero {
+    height: 90vh; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; background: #0f172a; color: white;
+}
+.parallax-layer {
+    position: absolute; top: 0; left: 0; width: 100%; height: 130%; pointer-events: none;
+}
+.layer-bg { z-index: 1; opacity: 0.2; }
+.layer-mid { z-index: 2; opacity: 0.4; }
+.layer-fg { z-index: 3; opacity: 0.6; }
+
+.hero-content { position: relative; z-index: 10; text-align: center; max-width: 800px; padding: 20px; }
+.hero-content h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
+
+/* --- SECTIONS --- */
+section { padding: 100px 8%; position: relative; background: white; z-index: 10; }
+.section-title { text-align: center; margin-bottom: 60px; font-size: 2.5rem; }
+
+/* --- BENTO GRID --- */
+.bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.bento-card { padding: 40px; border-radius: 30px; background: var(--bg-light); border: 1px solid var(--border); transition: 0.3s; }
+
+/* --- PRICING TABLE --- */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+.price-card {
+    padding: 40px; border-radius: 32px; border: 1px solid var(--border);
+    transition: 0.4s ease; display: flex; flex-direction: column;
+}
+.price-card.featured { border: 2px solid var(--primary); background: var(--primary-light); transform: scale(1.05); }
+.price-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.price-card .cost { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; }
+.price-card ul { list-style: none; margin-bottom: 30px; flex-grow: 1; }
+.price-card li { margin-bottom: 12px; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; }
+.check-icon { color: var(--primary); font-weight: bold; }
+
+/* --- FAQ --- */
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-btn { width: 100%; padding: 25px; display: flex; justify-content: space-between; background: none; border: none; cursor: pointer; font-size: 1.1rem; font-weight: 700; text-align: left; }
+.faq-content { max-height: 0; overflow: hidden; transition: 0.3s ease-out; padding: 0 25px; color: var(--text-gray); }
+.faq-item.active .faq-content { max-height: 150px; padding-bottom: 25px; }
+
+/* --- CONTACT --- */
+.contact-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
+input, textarea { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 20px; outline: none; }
+
+.btn { padding: 15px 35px; border-radius: 50px; border: none; background: var(--primary); color: white; font-weight: 700; cursor: pointer; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; }
+.btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+
+
+
+.main {margin-left: 0px; padding: 10px;}
