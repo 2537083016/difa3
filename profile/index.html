@@ -64,10 +64,34 @@ loadModularComponent('temp-menu', 'target-menu',[{ app: "." } ])
 .then(() => {svg.di(); });
 </script>
 
-<script type="text/javascript" src="/piawai/web/home.js"></script>
+<script type="text/javascript" src="profile.js"></script>
 <script type="text/javascript">
-home.controller.home();
+profile.controller.profile();
+
+var profiles = {
+  wawan: {
+    name: "Wawan Sismadi",
+    desc: "Web Developer & Researcher"
+  },
+  fatih: {
+    name: "Al Fatih Fawaz Sismadi",
+    desc: "Software Architect & Cloud Engineer"
+  }
+};
+
+var param = window.location.search.substring(1).toLowerCase();
+
+if (profiles[param]) {
+  profile.model.profile.username=profiles[param].name;
+
+  document.getElementById("username").innerText = profiles[param].name;
+  document.getElementById("desc").innerText = profiles[param].desc;
+} else {
+  document.getElementById("username").innerText = "Profile tidak ditemukan";
+  document.getElementById("desc").innerText = "Gunakan URL seperti ?wawan atau ?sismadi";
+}
 </script>
+
 
 </body>
 </html>
