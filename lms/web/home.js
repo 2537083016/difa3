@@ -31,7 +31,6 @@ card:{id:"card", data:[
 ]},
 }, //end profile
 
-
 }, //end model
 
 view:{
@@ -45,8 +44,12 @@ view:{
     log(st);
     // <img class="img" src='bg.png'>
 
+    id_kursus=1;
+    status='Login';
+loginstatus=login.controller.login();
+
     out=`
-    <div class="row shadow">
+      <div class="row shadow">
     <img src="/piawai/templates/donat/slide1.png" class="img">
     </div>
 
@@ -59,7 +62,7 @@ view:{
       <div  class="artikel">
 
       <h3>Perluasan Kesempatan Kerja</h3>
-      Fasilitasi perluasan kesempatan kerja untuk mempertemukan Alumni Digital Talent Scholarship dengan mitra perusahaan atau Industri yang membutuhkan talenta melalui platform Diploy.
+      dolor ipsum
       </div>
       </div>
     </div>
@@ -73,7 +76,7 @@ view:{
     <div class="col-1-${step}"  >
       <div class="ag1">
         <div class="ag-menu" >
-        <img src="/piawai/templates/donat/mk1.jpg" class="img">
+        <img src="/piawai/templates/donat/slide1.png" class="img">
           <div class="artikel">${nama}
 <br/>
 ${svg.icon('person')} 24 Peserta
@@ -94,12 +97,7 @@ ${svg.icon('person')} 24 Peserta
 
 ${svg.icon('piawai')}
 <br/>
-    Badan Pengembangan SDM Komdigi
-    Kementerian Komunikasi dan Digital RI
-    Jl. Medan Merdeka Barat No. 9, Jakarta Pusat, 10110
-
-    Dikelola oleh:
-    Pusbang Ekosistem SDM Komdigi <br/>
+   <br/>
     ${svg.icon('github')}
     ${svg.icon('linkedin')}
     ${svg.icon('facebook')}
@@ -113,13 +111,7 @@ ${svg.icon('instagram')}
     <div class="artikel">
 
 <h3>Pranala</h3>
-Kementerian Komunikasi dan Digital RI
-Badan Pengembangan SDM Komdigi
-Diploy
-Beasiswa Komdigi
-Indeks Masyarakat Digital Indonesia
-Standar Kompetensi & Peta Okupasi Nasional
-Digitalent Developer Console
+
 
 </div>
 </div>
@@ -130,7 +122,7 @@ Digitalent Developer Console
 <ul>
 <li>Tentang Program</li>
 <li>FAQ</li>
-<li>Digitalent Mobile</li>
+<li>Mobile</li>
 </ul>
 </div>
 
