@@ -2,7 +2,7 @@ var sertifikat={
 model:{
 data:[
   {peserta:'Roy Mubarak',kursus:'Enkripsi blockchain',tanggal:'08 Sep 2025',kredensial:'202509080101'},
-  {peserta:'Asruyddin',kursus:'Digital Foreksik',tanggal:'08 Sep 2025',kredensial:'202509080102'},
+  {peserta:'Asruddin',kursus:'Digital Foreksik',tanggal:'08 Sep 2025',kredensial:'202509080102'},
   {peserta:'Wawan Sismadi',kursus:'IoT',tanggal:'08 Sep 2025',kredensial:'202509080103'},
 ]
   },
