@@ -349,6 +349,205 @@ exam: [
         }
     ],
 
+    // Tambahkan objek 'profile' di dalam const pages = { ... }
+    profile: [
+      {
+        section: 'titleHero',
+        title: 'Profil Pengguna'
+      },
+      // Default fallback jika role tidak ditemukan
+      {
+        id: 'default',
+        section: 'article',
+        layout: 'split',
+        leftCol: {
+          subtitle: 'Akses Ditolak',
+          lines: [
+            'Profil yang Anda akses tidak tersedia.',
+            '---',
+            'link:Kembali ke Dashboard:home'
+          ]
+        },
+        rightCol: {
+          subtitle: 'Informasi',
+          lines: [
+            'Pastikan URL profil yang diakses valid.',
+            'format:role:admin|guru|siswa'
+          ]
+        }
+      },
+
+      // ================= ADMIN PROFILE =================
+      {
+        id: 'admin',
+        section: 'article',
+        layout: 'split',
+        leftCol: {
+          subtitle: 'Admin Dashboard',
+          lines: [
+            'badge:Role: Administrator',
+            'badge:Akses: Full',
+            '---',
+            '### Statistik Sistem',
+            'card:Total Siswa: 124 Aktif',
+            'card:Total Guru: 18 Terverifikasi',
+            'card:Kursus Aktif: 8 Modul',
+            'card:Kuis Tersedia: 24 Evaluasi',
+            '---',
+            'link:Kelola Siswa:profile/admin?tab=students',
+            'link:Kelola Guru:profile/admin?tab=teachers',
+            'link:Laporan Lengkap:order'
+          ]
+        },
+        rightCol: {
+          subtitle: 'Panel Kontrol',
+          lines: [
+            '### Aktivitas Terbaru',
+            'table:[{"Aktivitas":"Login Guru","Waktu":"2 menit lalu","Status":"Sukses"},{"Aktivitas":"Submit Kuis","Waktu":"15 menit lalu","Status":"Diproses"},{"Aktivitas":"Enroll Siswa","Waktu":"1 jam lalu","Status":"Selesai"}]',
+            '---',
+            '### Quick Actions',
+            'skill:100%:Tambah User Baru,Aksi',
+            'skill:100%:Generate Laporan,Export',
+            'skill:100%:Backup Database,Maintenance',
+            '---',
+            'form:{"fields":[{"label":"Pencarian","type":"text","placeholder":"Cari pengguna..."}],"submitText":"Cari"}'
+          ]
+        }
+      },
+
+      // ================= GURU PROFILE =================
+      {
+        id: 'guru',
+        section: 'article',
+        layout: 'split',
+        leftCol: {
+          subtitle: 'Dashboard Pengajar',
+          lines: [
+            'badge:Role: Guru',
+            'badge:Mata Pelajaran: Web Development',
+            '---',
+            '### Kelas Aktif',
+            'card:Batch 1 - DonatJS: 32 Siswa',
+            'card:Batch 2 - Web Desain: 28 Siswa',
+            'card:Mentoring: 12 Pertemuan',
+            '---',
+            '### Materi Terbaru',
+            'step:2026-04:Modul 4:UI Components',
+            'step:2026-04:Modul 5:Layout & Grid',
+            'step:2026-05:Modul 6:UX Research (Draft)',
+            '---',
+            'link:Buat Kuis Baru:exam',
+            'link:Lihat Progress Kelas:profile/guru?tab=progress'
+          ]
+        },
+        rightCol: {
+          subtitle: 'Monitoring Siswa',
+          lines: [
+            '### Performa Kuis',
+            'table:[{"Siswa":"Ani Wijaya","Nilai":"95","Status":"Lulus"},{"Siswa":"Budi Santoso","Nilai":"88","Status":"Lulus"},{"Siswa":"Citra Dewi","Nilai":"72","Status":"Remedial"}]',
+            '---',
+            '### Tugas Pending',
+            'skill:80%:Review Submission Modul 3,3 tersisa',
+            'skill:60%:Feedback Kuis Bab 2,5 tersisa',
+            'skill:40%:Update Materi Slide,2 tersisa',
+            '---',
+            'form:{"fields":[{"label":"Filter Kelas","type":"select","options":["Semua","Batch 1","Batch 2"]},{"label":"Catatan","type":"textarea","placeholder":"Catatan untuk siswa..."}],"submitText":"Kirim Feedback"}'
+          ]
+        }
+      },
+
+      // ================= SISWA PROFILE =================
+      {
+        id: 'siswa',
+        section: 'article',
+        layout: 'split',
+        leftCol: {
+          subtitle: 'Dashboard Pembelajaran',
+          lines: [
+            'badge:Role: Siswa',
+            'badge:Batch: 1 - 2026',
+            '---',
+            '### Progres Kursus',
+            'skill:85%:Fondasi & Arsitektur,Selesai',
+            'skill:60%:UI & UX Implementation,Berjalan',
+            'skill:20%:Project Final,Belum Dimulai',
+            '---',
+            '### Sertifikat',
+            'card:Fundamental JS:Lulus • 92/100',
+            'card: MVC Architecture:Lulus • 88/100',
+            'badge:Next: Evaluasi Kompetensi',
+            '---',
+            'link:Lanjut Belajar:learn/modul-04',
+            'link:Ambil Kuis:exam'
+          ]
+        },
+        rightCol: {
+          subtitle: 'Capaian & Target',
+          lines: [
+            '### Nilai Capaian',
+            'table:[{"Modul":"Pertemuan 1","Nilai":"95","Tanggal":"12 Apr"},{"Modul":"Pertemuan 2","Nilai":"88","Tanggal":"19 Apr"},{"Modul":"Pertemuan 3","Nilai":"91","Tanggal":"26 Apr"}]',
+            '---',
+            '### Target Minggu Ini',
+            'skill:100%:Selesaikan Modul 4,Deadline: 3 Mei',
+            'skill:75%:Kerjakan Quiz Bab 2,Deadline: 5 Mei',
+            'skill:30%:Upload Project Mini,Deadline: 10 Mei',
+            '---',
+            '### Notifikasi',
+            'badge:Info:Sesi mentoring Sabtu 09.00 WIB',
+            'badge:Update:Materi Slide 6 tersedia',
+            'link:Lihat Semua:profile/siswa?tab=notifications'
+          ]
+        }
+      },
+
+      // ================= SISWA2 PROFILE (Contoh Variasi) =================
+      {
+        id: 'siswa2',
+        section: 'article',
+        layout: 'split',
+        leftCol: {
+          subtitle: 'Riwayat Pembelajaran',
+          lines: [
+            'badge:Role: Siswa',
+            'badge:Status: Aktif',
+            '---',
+            '### Jalur Pembelajaran',
+            'step:Jan 2026:Enroll:DonatJS Batch 1',
+            'step:Feb 2026:Modul 1:Lulus • 90/100',
+            'step:Mar 2026:Modul 2:Lulus • 85/100',
+            'step:Apr 2026:Modul 3:Berjalan • 78/100',
+            '---',
+            '### Kompetensi Terkuasai',
+            'skill:100%:ES6+ Syntax,Terkunci',
+            'skill:100%:DOM Manipulation,Terkunci',
+            'skill:85%:MVC Pattern,Berjalan',
+            'skill:40%:Deployment,Belum',
+            '---',
+            'link:Download Transkrip:order',
+            'link:Hubungi Mentor:home/biografi'
+          ]
+        },
+        rightCol: {
+          subtitle: 'Analytics Pribadi',
+          lines: [
+            '### Waktu Belajar',
+            'table:[{"Minggu":"Week 1","Jam":"4.5h"},{"Minggu":"Week 2","Jam":"6.2h"},{"Minggu":"Week 3","Jam":"5.8h"},{"Minggu":"Week 4","Jam":"3.1h"}]',
+            '---',
+            '### Strength & Focus',
+            'card:💪 Strong:JavaScript Fundamentals',
+            'card:🎯 Focus:CSS Layout & Grid',
+            'card:📈 Growth:+12% vs minggu lalu',
+            '---',
+            '### Rekomendasi',
+            'skill:90%:Ulangi Materi Tipografi,Untuk kuis berikutnya',
+            'skill:70%:Praktik Wireframing,Project-based',
+            'skill:50%:Diskusi UX Research,Forum kelas',
+            '---',
+            'form:{"fields":[{"label":"Catatan Pribadi","type":"textarea","placeholder":"Target belajar minggu ini..."}],"submitText":"Simpan Target"}'
+          ]
+        }
+      }
+    ],
 
 };
 
